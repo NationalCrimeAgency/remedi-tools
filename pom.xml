@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>uk.gov.nca.remedi</groupId>
+  <artifactId>remedi-tools</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <developers>
+    <developer>
+      <name>James Baker</name>
+    </developer>
+  </developers>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <remedi-tools.version>1.0.0</remedi-tools.version>
+
+    <commons-cli.version>1.4</commons-cli.version>
+    <corenlp.verison>3.9.1</corenlp.verison>
+    <icu4j.version>62.1</icu4j.version>
+    <jackson.version>2.9.7</jackson.version>
+    <junit.version>5.3.1</junit.version>
+    <languagedetector.version>0.6</languagedetector.version>
+    <shade.version>3.1.1</shade.version>
+  </properties>
+
+  <modules>
+    <module>filter</module>
+    <module>processor</module>
+    <module>stanford-truecaser</module>
+  </modules>
+
+</project>
