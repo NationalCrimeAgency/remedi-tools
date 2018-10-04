@@ -1,6 +1,6 @@
 # REMEDI Tools
 
-This project contains a number of tools that can be used in conjunction with REMEDI, for example tools
+This project contains a number of tools that can be used in conjunction with [REMEDI](https://github.com/ivan-zapreev/Distributed-Translation-Infrastructure), for example tools
 to do the pre-/post- processing of text prior to translation.
 
 ## Filter
