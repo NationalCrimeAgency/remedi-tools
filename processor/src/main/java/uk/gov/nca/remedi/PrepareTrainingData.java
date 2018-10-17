@@ -16,6 +16,7 @@ limitations under the License.
 
 package uk.gov.nca.remedi;
 
+import com.google.common.base.CharMatcher;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -63,6 +64,8 @@ public class PrepareTrainingData {
     File inputFile = new File(cmd.getOptionValue('i'));
     File outputFile = new File(cmd.getOptionValue('o'));
 
+    boolean firstLine = true;
+
     try (
         BufferedReader br = new BufferedReader(new FileReader(inputFile));
         BufferedWriter bw = new BufferedWriter(new FileWriter(outputFile));
@@ -81,9 +84,15 @@ public class PrepareTrainingData {
           sentence.forEach(sj::add);
         }
 
-        bw.write(sj.toString());
-        bw.newLine();
+        //Remove control characters
+        String cleaned = CharMatcher.javaIsoControl().removeFrom(sj.toString());
 
+        if(!firstLine){   //Do it like this so we don't have a trailing empty line at the end of the file
+          bw.newLine();
+        }
+        bw.write(cleaned);
+
+        firstLine = false;
       }
     }catch (IOException ioe){
       System.err.println("IOException occurred: "+ioe.getMessage());

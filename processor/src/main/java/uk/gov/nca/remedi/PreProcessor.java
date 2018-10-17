@@ -16,6 +16,7 @@ limitations under the License.
 
 package uk.gov.nca.remedi;
 
+import com.google.common.base.CharMatcher;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -88,7 +89,9 @@ public class PreProcessor {
     //Write output file
     StringJoiner sj = new StringJoiner("\n");
     for(List<String> sentence : tokens){
-      sj.add(sentence.stream().collect(Collectors.joining(" ")));
+      sj.add(
+          CharMatcher.javaIsoControl().removeFrom(  //Remove control characters
+              sentence.stream().collect(Collectors.joining(" "))));
     }
 
     File outputFile = new File(cmd.getOptionValue('d'), cmd.getOptionValue('j') + ".pre.out.txt");

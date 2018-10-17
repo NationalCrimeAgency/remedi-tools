@@ -16,6 +16,7 @@ limitations under the License.
 
 package uk.gov.nca.remedi;
 
+import com.google.common.base.CharMatcher;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -76,6 +77,10 @@ public class CleanParallelCorpus {
         String line2 = br2.readLine();
         if(line2 == null || line2.trim().isEmpty() || line1.trim().isEmpty())
           continue;
+
+        //Remove control characters
+        line1 = CharMatcher.javaIsoControl().removeFrom(line1);
+        line2 = CharMatcher.javaIsoControl().removeFrom(line2);
 
         // Remove leading periods
         while(line1.startsWith(".")){
