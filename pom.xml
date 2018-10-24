@@ -23,7 +23,7 @@
 
     <commons-cli.version>1.4</commons-cli.version>
     <corenlp.verison>3.9.2</corenlp.verison>
-    <guava.version>26.0-jre</guava.version>
+    <guava.version>27.0-jre</guava.version>
     <icu4j.version>63.1</icu4j.version>
     <jackson.version>2.9.7</jackson.version>
     <junit.version>5.3.1</junit.version>
