@@ -25,7 +25,7 @@
     <corenlp.verison>3.9.2</corenlp.verison>
     <guava.version>27.0.1-jre</guava.version>
     <icu4j.version>63.1</icu4j.version>
-    <jackson.version>2.9.7</jackson.version>
+    <jackson.version>2.9.8</jackson.version>
     <junit.version>5.3.2</junit.version>
     <languagedetector.version>0.6</languagedetector.version>
     <shade.version>3.1.1</shade.version>
